@@ -9,7 +9,7 @@ async function getData(URL) {
       throw new Error(response);
     } else {
       const data = await response.json(); 
-      console.log(data);
+      console.log(data.cards.map(card => card.name));
       document.getElementById("api-response").textContent = data.name;
     }
   } catch (error) {
