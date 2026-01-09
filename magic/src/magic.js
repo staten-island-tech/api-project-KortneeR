@@ -19,3 +19,20 @@ async function getData(URL) {
 }
 getData(URL);
 
+function inject(card){
+document.querySelector('#container').insertAdjacentHTML(
+  "afterbegin",
+  `<div>
+  <h3>${card.name}</h3>
+  <h5>${card.rarity}</h5>
+  <img src = ${card.imageUrl}>
+  <h4>Artist:${card.artist}</h4>
+  <button id="toCollection">Add to Collection</button>
+  </div>`
+);
+}
+
+cards.forEach(inject(card));
+
+let cardsTotal = 0;
+
